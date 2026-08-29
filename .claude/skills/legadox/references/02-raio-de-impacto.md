@@ -4,6 +4,14 @@ Você está calculando o raio de impacto de um trabalho, antes de qualquer plano
 
 Esta é a peça central do método. Ela existe para substituir o "peça permissão por intuição" por evidência coletada, e para manter o trabalho de baixo risco leve. Um raio calculado com rigor é o que permite que a maioria dos trabalhos passe direto, sem camada extra nenhuma.
 
+## Delegue ao agente `avaliador-de-raio`
+
+Quando o agente `avaliador-de-raio` estiver disponível, **delegue esta camada a ele** e siga com a faixa que ele devolver.
+
+O motivo aqui não é contexto, é **independência**. O cálculo do raio governa todas as outras camadas, e quem vai implementar tem interesse no resultado: raio alto significa caracterização, orçamento menor, plano de reversão e roteiro manual — mais trabalho. O `avaliador-de-raio` coleta os sinais sem ter esse interesse.
+
+O roteiro abaixo é o que ele segue, e continua valendo integralmente quando não houver agente disponível.
+
 ## Pré-requisitos verificáveis
 
 - `docs/legado/PERFIL.md` existe. Sem ele não há modo legado nem limiares para aplicar (regra 1).

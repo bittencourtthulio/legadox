@@ -50,6 +50,26 @@ Um diff de 400 linhas de formatação esconde as 3 que importam, e revisão huma
 
 O que você identificar como problema vai para `docs/legado/DIVIDA.md`: arquivo, o que foi visto, por que incomoda, risco de mexer. Registro, nunca correção.
 
+## Hooks: as regras são mecânicas, não lembradas
+
+Se o modo legado estiver ativo, parte destas regras é verificada por hook — script que o harness executa, não o modelo. Duas consequências práticas:
+
+- **Nenhum hook roda em raio BAIXO.** Trabalho de baixo risco não sente atrito nenhum.
+- **Dois hooks bloqueiam de verdade**, e não adianta insistir: escrita em zona de risco sem as perguntas respondidas, e implementação em raio ALTO sem aprovação humana registrada. Quando um deles barra, a mensagem diz o que fazer — o caminho é cumprir a etapa, nunca contornar o hook.
+
+Os demais (`raio-antes-do-plano`, `caracterizacao-antes`, `orcamento-de-mudanca`, `reversao-declarada`, `sem-colateral`) nascem em modo aviso: registram e explicam, sem barrar. Aviso de hook não é ruído — é a regra dizendo que algo saiu do método.
+
+Nunca edite os hooks para se livrar de um bloqueio. Se um hook está errado, isso é um achado: registre e diga ao usuário.
+
+## Agentes
+
+Duas partes do método rodam em agente próprio, com escrita restrita:
+
+- **`cartografo`** — gera o `PERFIL.md` e prova que o código está vivo. Escreve só em `docs/legado/`.
+- **`avaliador-de-raio`** — calcula o raio de impacto. Escreve só em `docs/legado/raio/`.
+
+O `avaliador-de-raio` é separado de propósito: quem implementa tem interesse em raio baixo, porque raio alto dá mais trabalho. Não calcule o raio você mesmo quando o agente estiver disponível.
+
 ## Comandos
 
 | Comando | O que faz |

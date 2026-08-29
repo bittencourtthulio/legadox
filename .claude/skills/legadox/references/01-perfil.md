@@ -4,6 +4,14 @@ Você está gerando ou atualizando `docs/legado/PERFIL.md`, o mapa que o projeto
 
 Roda uma vez, no início da adoção, e é atualizado sob demanda — quando o projeto ganha um módulo novo, quando uma zona de risco é descoberta, ou quando os limiares do raio se mostram mal calibrados.
 
+## Delegue ao agente `cartografo`
+
+Quando o agente `cartografo` estiver disponível, **delegue esta camada a ele** e siga com o resultado. Ele existe exatamente para isto.
+
+O motivo é de contexto, não de capacidade: montar o PERFIL é leitura pesada — manifestos, migrações, grafo de chamadas, histórico do versionador. Feito no contexto principal, esse volume consome justamente o contexto que depois vai planejar o trabalho. O `cartografo` roda em contexto próprio e devolve só o resultado.
+
+O roteiro abaixo é o que ele segue, e continua valendo integralmente quando não houver agente disponível.
+
 ## Pré-requisitos verificáveis
 
 - Você tem o repositório em disco e consegue ler os manifestos de dependência.

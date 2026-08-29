@@ -27,6 +27,25 @@ Quando você pede a um agente de IA para mexer num sistema com dez anos de estra
 
 ---
 
+## O ecossistema Expx
+
+O método Expx é um conjunto de skills que se compõem, instaladas e mantidas pelo CLI [`expxdev`](https://github.com/bittencourtthulio/expxdev).
+
+| Peça | Papel | Relação com o `legadox` |
+|---|---|---|
+| **[expxdev](https://github.com/bittencourtthulio/expxdev)** | o CLI: instala, atualiza e diagnostica o ecossistema, e sobe o painel de operação | é quem instala esta skill (`npx expxdev init`) |
+| **[sprintx](https://github.com/bittencourtthulio/sprintx)** | **Build** — feature nova, F1…F6 | o legadox endurece cada uma das seis fases |
+| **[runx](https://github.com/bittencourtthulio/runx)** | **Run** — ocorrência em produção, E1…E5 | o legadox endurece cada um dos cinco estágios |
+| **legadox** *(este repositório)* | **camada** de segurança para código legado | — |
+| **[stackx](https://github.com/bittencourtthulio/stackx)** | **camada** de convenções do repositório | o cartucho de migração dele alimenta o cálculo de raio; em área legada, quem manda é o `PERFIL.md` |
+| **[mergex](https://github.com/bittencourtthulio/mergex)** | entrega: branch, commit por task, PR e pacote de QA | raio, caracterização, reversão e dívida alimentam o portão, a classificação de atenção e o PR |
+
+**Camadas** (`legadox`, `stackx`) sozinhas não fazem nada — elas modificam o comportamento da `sprintx` e da `runx`. Sem `docs/legado/PERFIL.md`, nada muda: as irmãs se comportam como se comportariam sem esta skill.
+
+Detalhes do ecossistema inteiro no [README do expxdev](https://github.com/bittencourtthulio/expxdev).
+
+---
+
 ## O problema
 
 Um sistema de faturamento em produção há oito anos arredonda o imposto para baixo. Está errado. Está errado desde 2018, e trinta clientes já construíram suas planilhas de conferência em cima desse valor errado. Quando alguém pede a um agente de IA para "corrigir o arredondamento do imposto", ele lê o código, entende a regra, corrige — e de quebra renomeia três variáveis mal nomeadas, reorganiza os imports, atualiza uma chamada depreciada e formata o arquivo inteiro. O diff tem 380 linhas. As 4 que importam estão perdidas no meio. Ninguém revisa 380 linhas com atenção. A mudança sobe, e na virada do mês o relatório fiscal de trinta clientes não bate mais com a planilha deles.
@@ -111,17 +130,17 @@ A faixa **nunca é escolhida por sensação** — é calculada pelos sinais. E s
 
 | # | Camada | O que faz |
 |---|---|---|
-| 1 | [Perfil do projeto](skill/references/01-perfil.md) | mapeia stack, entradas, comandos, cobertura medida, padrões conflitantes e zonas de risco |
-| 2 | [Raio de impacto](skill/references/02-raio-de-impacto.md) | calcula o risco por evidência antes de qualquer plano |
-| 3 | [Testes de caracterização](skill/references/03-caracterizacao.md) | congela o comportamento atual, inclusive o errado, antes de alterar |
-| 4 | [Ponto de costura](skill/references/04-ponto-de-costura.md) | acha onde intervir sem alterar o comportamento em volta |
-| 5 | [Orçamento de mudança](skill/references/05-orcamento-e-colateral.md) | teto de arquivos e linhas por task, declarado antes de executar |
-| 6 | [Proibição de melhoria colateral](skill/references/05-orcamento-e-colateral.md) | nada de brinde no diff; o que incomoda vira inventário de dívida |
-| 7 | [Plano de reversão](skill/references/06-reversao.md) | como desfazer, inclusive o que o versionador não desfaz |
-| 8 | [Roteiro de teste manual](skill/references/07-teste-manual.md) | passo a passo para uma pessoa validar na tela, com o colateral |
-| 9 | [Comparação com dado real](skill/references/08-comparacao-real.md) | roda antes e depois sobre amostra anonimizada e explica cada divergência |
-| 10 | [Prova de que o código está vivo](skill/references/09-zonas-e-perguntas.md) | confirma que o arquivo é chamado antes de gastar esforço nele |
-| 11 | [Perguntas obrigatórias por zona](skill/references/09-zonas-e-perguntas.md) | dispara perguntas por regra quando o trabalho toca área sensível |
+| 1 | [Perfil do projeto](.claude/skills/legadox/references/01-perfil.md) | mapeia stack, entradas, comandos, cobertura medida, padrões conflitantes e zonas de risco |
+| 2 | [Raio de impacto](.claude/skills/legadox/references/02-raio-de-impacto.md) | calcula o risco por evidência antes de qualquer plano |
+| 3 | [Testes de caracterização](.claude/skills/legadox/references/03-caracterizacao.md) | congela o comportamento atual, inclusive o errado, antes de alterar |
+| 4 | [Ponto de costura](.claude/skills/legadox/references/04-ponto-de-costura.md) | acha onde intervir sem alterar o comportamento em volta |
+| 5 | [Orçamento de mudança](.claude/skills/legadox/references/05-orcamento-e-colateral.md) | teto de arquivos e linhas por task, declarado antes de executar |
+| 6 | [Proibição de melhoria colateral](.claude/skills/legadox/references/05-orcamento-e-colateral.md) | nada de brinde no diff; o que incomoda vira inventário de dívida |
+| 7 | [Plano de reversão](.claude/skills/legadox/references/06-reversao.md) | como desfazer, inclusive o que o versionador não desfaz |
+| 8 | [Roteiro de teste manual](.claude/skills/legadox/references/07-teste-manual.md) | passo a passo para uma pessoa validar na tela, com o colateral |
+| 9 | [Comparação com dado real](.claude/skills/legadox/references/08-comparacao-real.md) | roda antes e depois sobre amostra anonimizada e explica cada divergência |
+| 10 | [Prova de que o código está vivo](.claude/skills/legadox/references/09-zonas-e-perguntas.md) | confirma que o arquivo é chamado antes de gastar esforço nele |
+| 11 | [Perguntas obrigatórias por zona](.claude/skills/legadox/references/09-zonas-e-perguntas.md) | dispara perguntas por regra quando o trabalho toca área sensível |
 
 ---
 
@@ -158,17 +177,28 @@ Sem `--force`, o instalador **nunca sobrescreve calado**: pergunta no modo inter
 
 ### Instalação manual
 
-A fonte fica em `skill/` e `commands/` — sem prefixo de harness:
+O repositório já publica as árvores no formato de cada harness, então instalar é copiar árvore para árvore:
 
 ```bash
 # Claude Code
-cp -r skill .claude/skills/legadox && cp commands/*.md .claude/commands/
+cp -r .claude/skills/legadox   .claude/skills/legadox
+cp -r .claude/hooks/legadox    .claude/hooks/legadox
+cp    .claude/agents/*.md      .claude/agents/
+cp    .claude/commands/*.md    .claude/commands/
 
 # OpenCode
-cp -r skill .opencode/skills/legadox && cp commands/*.md .opencode/commands/
+cp -r .opencode/skills/legadox .opencode/skills/legadox
+cp -r .opencode/hooks/legadox  .opencode/hooks/legadox
+cp    .opencode/agents/*.md    .opencode/agents/
+cp    .opencode/commands/*.md  .opencode/commands/
+cp    .opencode/plugin/legadox.js .opencode/plugin/
 ```
 
+No Claude Code os hooks precisam ser **registrados** no seu `.claude/settings.json`: copie o bloco `hooks` de `.claude/settings.json` deste repositório para o seu, preservando o que já existe. No OpenCode não há esse passo — o `plugin/legadox.js` é carregado sozinho.
+
 Copie também o `AGENTS.md` para a raiz do projeto: é por ele que o agente do OpenCode sabe que deve acionar a skill.
+
+O `install.sh` faz tudo isso, e o merge do `settings.json` com backup — é bem menos trabalhoso.
 
 Reinicie a sessão do seu harness para a skill ser carregada.
 
@@ -210,7 +240,7 @@ O legadox entrega duas coisas: as skills que produzem os artefatos, e os **patch
 
 Cada patch é um prompt autônomo. Ele detecta o `PERFIL.md`, carrega as referências do legadox quando presente, aplica as mudanças de fase, acrescenta as regras invioláveis correspondentes, e **não altera nada do comportamento fora do modo legado**.
 
-O detalhe do que muda em cada fase está em [integração com a sprintx](skill/references/10-integracao-sprintx.md) e [integração com a runx](skill/references/11-integracao-runx.md).
+O detalhe do que muda em cada fase está em [integração com a sprintx](.claude/skills/legadox/references/10-integracao-sprintx.md) e [integração com a runx](.claude/skills/legadox/references/11-integracao-runx.md).
 
 ---
 
@@ -298,6 +328,45 @@ Exemplos completos e preenchidos, de um ERP fictício com módulo fiscal, ficam 
 
 ---
 
+## Hooks: as camadas que não dependem de o modelo lembrar
+
+As doze regras acima são instruções — e instrução é coisa que o modelo pode esquecer numa execução longa, justamente quando o trabalho é grande e o risco é maior. Hook é script determinístico: roda sempre, porque quem executa é o harness, não o modelo.
+
+| Hook | Camada | O que faz |
+|---|---|---|
+| `zona-de-risco.sh` | 11 | **barra** escrita em zona de risco declarada enquanto as perguntas obrigatórias daquela zona não estiverem respondidas |
+| `aprovacao-em-raio-alto.sh` | — | **barra** implementação em raio ALTO sem aprovação humana registrada |
+| `caracterizacao-antes.sh` | 3 | em raio MÉDIO ou ALTO, avisa ao alterar arquivo que não consta da lista de caracterizados |
+| `orcamento-de-mudanca.sh` | 5 | conta arquivos e linhas já alterados na task e avisa ao estourar o teto da faixa |
+| `raio-antes-do-plano.sh` | 2 | avisa quando um plano é escrito sem o raio calculado |
+| `reversao-declarada.sh` | 7 | em raio MÉDIO ou ALTO, barra `status: concluida` sem plano de reversão preenchido |
+| `sem-colateral.sh` | 6 | detecta o diff que é só formatação, renomeação ou reorganização de import, e manda para o `DIVIDA.md` |
+
+**A doutrina do ecossistema é que todo hook de método nasce em modo `aviso`**, e só vira bloqueio depois de semanas sem falso positivo — hook que dá falso positivo é desinstalado, e junto com ele vão os que funcionavam. O `legadox` é o único repositório com **duas exceções deliberadas**: `zona-de-risco` e `aprovacao-em-raio-alto` nascem em `bloqueio`. O motivo está escrito no cabeçalho de cada um, e é o mesmo do resto da skill: nota fiscal emitida não volta.
+
+O modo de cada hook vive em `.expx/hooks.json`, com os padrões em `hooks/modos.padrao.json`.
+
+## Agentes
+
+Dois subagentes rodam em contexto próprio — e são os únicos do ecossistema com permissão de escrita, porque produzem artefato:
+
+| Agente | Camada | Papel |
+|---|---|---|
+| `cartografo` | 1 e 10 | monta o `PERFIL.md`, que é o gatilho do modo legado, e prova que o código alvo está vivo; o que não for verificável vira `NÃO DETERMINADO` |
+| `avaliador-de-raio` | 2 | coleta os oito sinais por evidência e classifica a faixa; sinal não coletável conta como pior caso, e isso fica escrito |
+
+## O rastro de eventos
+
+Os sete hooks gravam num arquivo append-only, uma linha JSON por evento, seguindo o contrato `expx-eventos` v1:
+
+```
+docs/eventos/<trabalho_id>.jsonl
+```
+
+É o que o **painel de operação** (`npx expxdev panel`) lê para mostrar o que aconteceu e quando — inclusive cada `regra_violada` e cada `acao_bloqueada`. É também o dado que diz quais hooks já rodaram tempo suficiente em modo aviso para serem promovidos a bloqueio.
+
+---
+
 ## Estrutura do repositório
 
 A fonte é **neutra de harness**: um único conjunto de arquivos, que o instalador materializa nos dois formatos.
@@ -321,6 +390,13 @@ skill/                        fonte única da skill
   assets/
     TEMPLATE-*.md             8 templates preenchíveis
 commands/                     os 6 comandos, válidos nos dois harnesses
+agents/                       os 2 subagentes: cartografo e avaliador-de-raio
+hooks/
+  hooks.json                  o registro dos hooks no harness
+  modos.padrao.json           o modo padrão de cada hook (aviso ou bloqueio)
+  *.sh                        os 7 hooks das camadas
+  comum/                      biblioteca comum: faixa do raio, rastro, permitir/avisar
+  opencode/legadox.js         ponte que traduz os eventos do OpenCode e invoca os mesmos .sh
 docs/integracao/              os patches para colar na sprintx e na runx
 exemplos/                     artefatos preenchidos de um ERP fictício
 install.sh                    instalador para Claude Code + OpenCode
@@ -352,4 +428,12 @@ Abra uma issue descrevendo o caso concreto antes de mandar um PR grande. Mudanç
 
 ---
 
-<sub>legadox é a camada de segurança do método Expx (Exponencial). A metade Build é a skill sprintx; a metade Run é a runx.</sub>
+<div align="center">
+<sub>Parte do método <strong>Expx</strong> ·
+<a href="https://github.com/bittencourtthulio/expxdev">expxdev</a> ·
+<a href="https://github.com/bittencourtthulio/sprintx">sprintx</a> ·
+<a href="https://github.com/bittencourtthulio/runx">runx</a> ·
+legadox ·
+<a href="https://github.com/bittencourtthulio/stackx">stackx</a> ·
+<a href="https://github.com/bittencourtthulio/mergex">mergex</a></sub>
+</div>

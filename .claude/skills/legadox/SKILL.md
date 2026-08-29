@@ -123,6 +123,35 @@ Em **BAIXO** o legadox registra o raio e sai do caminho: o fluxo da sprintx ou d
 
 A Camada 9 também é obrigatória, independentemente da faixa, em **qualquer mudança de cálculo ou de regra de negócio**.
 
+## Hooks e agentes
+
+As 12 regras invioláveis não mudam. Os hooks as tornam **mecânicas**: quem executa é o harness, não o modelo, então elas não dependem de o modelo lembrar delas quinze tasks adiante.
+
+**Nenhum hook de método roda em raio BAIXO.** Todos leem a faixa primeiro e saem imediatamente se for baixa — correção de rótulo passa sem atrito nenhum. A única exceção é a zona de risco, que bloqueia desde o início em qualquer faixa.
+
+Todo hook nasce em modo `aviso` (registra, não bloqueia) e só vira `bloqueio` depois de rodar sem falso positivo. O modo vive em `.expx/hooks.json`, um por hook. As duas exceções nascem em bloqueio: `zona-de-risco` e `aprovacao-em-raio-alto` — onde errar não é bug, é processo, e o custo do falso positivo é pequeno perto do do falso negativo.
+
+| Hook | Evento | Nasce em | O que faz |
+|---|---|---|---|
+| `zona-de-risco` | PreToolUse | **bloqueio** | Barra escrita em zona de risco sem as perguntas da Camada 11 respondidas (regra 8) |
+| `aprovacao-em-raio-alto` | PreToolUse | **bloqueio** | Barra implementação em raio ALTO sem aprovação humana registrada (regra 9) |
+| `raio-antes-do-plano` | PreToolUse | aviso | Barra geração de plano sem o arquivo de raio existir (regra 2) |
+| `caracterizacao-antes` | PreToolUse | aviso | Em MEDIO ou ALTO, barra alteração de arquivo sem caracterização declarada (regra 4) |
+| `orcamento-de-mudanca` | PreToolUse | aviso | Conta arquivos e linhas da task contra o teto da faixa (regra 6) |
+| `reversao-declarada` | PreToolUse | aviso | Barra `status: concluida` em MEDIO ou ALTO sem plano de reversão (regra 7) |
+| `sem-colateral` | PostToolUse | aviso | Detecta diff que é só formatação, import ou renomeação (regra 5) |
+
+Dois agentes rodam em contexto próprio, com escrita restrita:
+
+- **`cartografo`** — Camadas 1 e 10. Monta o `PERFIL.md` e prova que o código está vivo. Escreve só em `docs/legado/`. O que não for verificável vira `NÃO DETERMINADO` e entra em `LACUNAS.md`.
+- **`avaliador-de-raio`** — Camada 2. Coleta os oito sinais e classifica a faixa. Escreve só em `docs/legado/raio/`. Existe separado porque **coleta os sinais sem ter interesse no resultado**: o implementador tem interesse em raio baixo, porque raio alto lhe dá mais trabalho.
+
+Cada hook grava no rastro (`docs/eventos/<trabalho_id>.jsonl`), inclusive quando permite. É o rastro que mostra qual hook barra demais e está calibrado errado.
+
+### Precedência com o `stackx`
+
+O hook do `stackx` que verifica aderência às convenções **não roda em arquivo antigo dentro de área tocada quando o `PERFIL.md` existe**. Ali manda o padrão local. Sem essa exclusão os dois hooks brigam, e a IA "moderniza" arquivo legado achando que obedece convenção — exatamente o colateral que a Camada 6 proíbe.
+
 ## Regras invioláveis
 
 1. Sem `docs/legado/PERFIL.md` não existe modo legado. A primeira coisa é gerá-lo.

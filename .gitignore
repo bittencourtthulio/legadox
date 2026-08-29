@@ -1,1 +1,10 @@
 .DS_Store
+
+# Artefatos de execucao, nao do repositorio.
+# O rastro e local da maquina de quem executou e cresce rapido (contrato
+# expx-eventos v1); .expx/ guarda o lock do trabalho e os modos dos hooks.
+docs/eventos/
+.expx/
+
+# backup gerado pelo instalador ao mesclar o settings.json do usuario
+*.bak-legadox
