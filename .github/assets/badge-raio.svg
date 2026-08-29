@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="20" role="img" aria-label="raio: BAIXO/MEDIO/ALTO">
+  <title>raio: BAIXO/MEDIO/ALTO</title>
+  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
+  <clipPath id="c"><rect width="170" height="20" rx="3" fill="#fff"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect width="42" height="20" fill="#555"/>
+    <rect x="42" width="128" height="20" fill="#9a6700"/>
+    <rect width="170" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+    <text x="21" y="15" fill="#010101" fill-opacity=".3">raio</text>
+    <text x="21" y="14">raio</text>
+    <text x="106" y="15" fill="#010101" fill-opacity=".3">BAIXO/MEDIO/ALTO</text>
+    <text x="106" y="14">BAIXO/MEDIO/ALTO</text>
+  </g>
+</svg>

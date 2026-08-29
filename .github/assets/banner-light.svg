@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="250" viewBox="0 0 1000 250" role="img" aria-label="legadox — a camada de seguranca do metodo Expx">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#cf222e"/><stop offset="100%" stop-color="#cf222e" stop-opacity="0.5"/>
+    </linearGradient>
+    <pattern id="p" width="26" height="26" patternUnits="userSpaceOnUse">
+      <path d="M26 0H0v26" fill="none" stroke="#f6f8fa" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="250" rx="14" fill="#ffffff"/>
+  <rect width="1000" height="250" rx="14" fill="url(#p)"/>
+  <rect x="0" y="0" width="6" height="250" rx="3" fill="url(#g)"/>
+
+  <text x="56" y="98" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="64" font-weight="700" fill="#1f2328">legadox</text>
+  <rect x="352" y="62" width="140" height="30" rx="15" fill="none" stroke="#cf222e" stroke-width="1.5"/>
+  <text x="422" y="82" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13.5" fill="#cf222e">metodo Expx</text>
+
+  <text x="57" y="134" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="17" fill="#59636e">Trabalho de IA em codigo legado, sem quebrar o que ja roda</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12.5">
+    <rect x="56"  y="162" width="176" height="34" rx="8" fill="#eaeef2"/>
+    <text x="144" y="184" text-anchor="middle" fill="#1f2328">raio de impacto</text>
+    <rect x="244" y="162" width="164" height="34" rx="8" fill="#eaeef2"/>
+    <text x="326" y="184" text-anchor="middle" fill="#1f2328">caracterizacao</text>
+    <rect x="420" y="162" width="140" height="34" rx="8" fill="#eaeef2"/>
+    <text x="490" y="184" text-anchor="middle" fill="#1f2328">orcamento</text>
+    <rect x="572" y="162" width="126" height="34" rx="8" fill="#eaeef2"/>
+    <text x="635" y="184" text-anchor="middle" fill="#1f2328">reversao</text>
+  </g>
+  <g stroke="#cf222e" stroke-width="1.5" fill="none" opacity="0.7">
+    <path d="M235 179h6"/><path d="M411 179h6"/><path d="M563 179h6"/>
+  </g>
+
+  <text x="944" y="218" text-anchor="end" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#59636e">Claude Code  +  OpenCode</text>
+</svg>

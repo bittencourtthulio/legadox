@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-label="O raio de impacto: sinais, faixas e o que cada faixa aciona">
+  <defs>
+    <marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10z" fill="#8b949e"/></marker>
+  </defs>
+  <rect width="1000" height="470" rx="12" fill="#0d1117"/>
+  <text x="36" y="40" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="17" font-weight="700" fill="#e6edf3">O raio de impacto</text>
+  <text x="36" y="62" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" fill="#8b949e">Calculado por evidencia antes de qualquer plano. Nunca escolhido por sensacao.</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace">
+    <rect x="36" y="88" width="928" height="74" rx="10" fill="#161b22" stroke="#30363d"/>
+    <text x="52" y="110" font-size="10.5" font-weight="700" fill="#e6edf3">8 SINAIS COLETADOS</text>
+    <text x="52" y="130" font-size="10" fill="#8b949e">chamadores  ·  telas e rotas  ·  jobs, crons e relatorios  ·  cobertura de teste</text>
+    <text x="52" y="145" font-size="10" fill="#8b949e">zona de risco  ·  churn e idade  ·  migracao de banco  ·  dado historico ou imutavel</text>
+
+    <path d="M500 162v18" stroke="#8b949e" stroke-width="1.8" fill="none" marker-end="url(#s1)"/>
+    <text x="516" y="176" font-size="10" fill="#8b949e">sinal nao coletavel = pior caso</text>
+
+    <rect x="36"  y="186" width="298" height="248" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="36"  y="186" width="298" height="4" rx="2" fill="#3fb950"/>
+    <text x="56" y="214" font-size="15" font-weight="700" fill="#3fb950">BAIXO</text>
+    <text x="56" y="236" font-size="10" fill="#8b949e">ate 3 chamadores, sem zona de risco,</text>
+    <text x="56" y="251" font-size="10" fill="#8b949e">sem migracao, com cobertura existente</text>
+    <line x1="56" y1="264" x2="314" y2="264" stroke="#30363d"/>
+    <text x="56" y="286" font-size="10.5" fill="#e6edf3">registra o raio e sai do caminho</text>
+    <text x="56" y="308" font-size="10" fill="#8b949e">orcamento 5 arquivos / 150 linhas</text>
+    <text x="56" y="330" font-size="10" fill="#8b949e">sem caracterizacao</text>
+    <text x="56" y="348" font-size="10" fill="#8b949e">sem comparacao</text>
+    <text x="56" y="366" font-size="10" fill="#8b949e">sem aprovacao humana</text>
+    <text x="56" y="410" font-size="10.5" font-style="italic" fill="#3fb950">o fluxo roda como hoje</text>
+
+    <rect x="350" y="186" width="298" height="248" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="350" y="186" width="298" height="4" rx="2" fill="#d29922"/>
+    <text x="370" y="214" font-size="15" font-weight="700" fill="#d29922">MEDIO</text>
+    <text x="370" y="236" font-size="10" fill="#8b949e">4 a 15 chamadores, ou cobertura</text>
+    <text x="370" y="251" font-size="10" fill="#8b949e">ausente, ou consumo por job/relatorio</text>
+    <line x1="370" y1="264" x2="628" y2="264" stroke="#30363d"/>
+    <text x="370" y="286" font-size="10.5" fill="#e6edf3">congela antes de mexer</text>
+    <text x="370" y="308" font-size="10" fill="#8b949e">orcamento 3 arquivos / 80 linhas</text>
+    <text x="370" y="330" font-size="10" fill="#8b949e">+ testes de caracterizacao</text>
+    <text x="370" y="348" font-size="10" fill="#8b949e">+ ponto de costura declarado</text>
+    <text x="370" y="366" font-size="10" fill="#8b949e">+ plano de reversao</text>
+    <text x="370" y="384" font-size="10" fill="#8b949e">+ roteiro de teste manual</text>
+    <text x="370" y="416" font-size="10.5" font-style="italic" fill="#d29922">plano aprovado antes do codigo</text>
+
+    <rect x="664" y="186" width="300" height="248" rx="10" fill="#161b22" stroke="#30363d"/>
+    <rect x="664" y="186" width="300" height="4" rx="2" fill="#ff7b72"/>
+    <text x="684" y="214" font-size="15" font-weight="700" fill="#ff7b72">ALTO</text>
+    <text x="684" y="236" font-size="10" fill="#8b949e">+15 chamadores, ou zona de risco,</text>
+    <text x="684" y="251" font-size="10" fill="#8b949e">ou migracao, ou dado historico</text>
+    <line x1="684" y1="264" x2="944" y2="264" stroke="#30363d"/>
+    <text x="684" y="286" font-size="10.5" fill="#e6edf3">tudo do MEDIO, e mais</text>
+    <text x="684" y="308" font-size="10" fill="#8b949e">orcamento 2 arquivos / 40 linhas</text>
+    <text x="684" y="330" font-size="10" fill="#8b949e">+ perguntas da zona antes do plano</text>
+    <text x="684" y="348" font-size="10" fill="#8b949e">+ comparacao com dado real</text>
+    <text x="684" y="366" font-size="10" fill="#8b949e">+ feature flag</text>
+    <text x="684" y="384" font-size="10" fill="#8b949e">+ aprovacao humana registrada</text>
+    <text x="684" y="416" font-size="10.5" font-style="italic" fill="#ff7b72">quanto maior o risco, menor o diff</text>
+  </g>
+</svg>

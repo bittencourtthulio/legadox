@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="464" viewBox="0 0 1000 464" role="img" aria-label="As 11 camadas do legadox e a faixa de raio que aciona cada uma">
+  <rect width="1000" height="464" rx="12" fill="#ffffff"/>
+  <text x="36" y="40" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="17" font-weight="700" fill="#1f2328">As 11 camadas</text>
+  <text x="36" y="62" font-family="-apple-system,Segoe UI,Roboto,sans-serif" font-size="12.5" fill="#59636e">Nenhuma e aplicada por padrao a tudo. Cada uma e acionada por faixa de raio.</text>
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">
+    <rect x="36" y="88" width="928" height="26" rx="6" fill="#f6f8fa"/>
+    <text x="52"  y="105" font-size="10" font-weight="700" fill="#59636e">CAMADA</text>
+    <text x="470" y="105" font-size="10" font-weight="700" fill="#59636e">O QUE FAZ</text>
+    <text x="866" y="105" font-size="10" font-weight="700" fill="#59636e">ACIONA EM</text>
+    <text x="52" y="138" fill="#1f2328">1   Perfil do projeto</text>
+    <text x="470" y="138" font-size="10" fill="#59636e">o mapa: stack, entradas, padroes, zonas de risco</text>
+    <rect x="860" y="126" width="104" height="17" rx="4" fill="#1a7f37" opacity="0.15"/>
+    <text x="912" y="138" text-anchor="middle" font-size="9.5" fill="#1a7f37">uma vez</text>
+    <rect x="36" y="147" width="928" height="26" rx="6" fill="#f6f8fa" opacity="0.6"/>
+    <text x="52" y="166" fill="#1f2328">2   Raio de impacto</text>
+    <text x="470" y="166" font-size="10" fill="#59636e">calcula o risco por evidencia, antes do plano</text>
+    <rect x="860" y="154" width="104" height="17" rx="4" fill="#1a7f37" opacity="0.15"/>
+    <text x="912" y="166" text-anchor="middle" font-size="9.5" fill="#1a7f37">sempre</text>
+    <text x="52" y="194" fill="#1f2328">3   Testes de caracterizacao</text>
+    <text x="470" y="194" font-size="10" fill="#59636e">congela o comportamento de hoje, erros inclusive</text>
+    <rect x="860" y="182" width="104" height="17" rx="4" fill="#9a6700" opacity="0.15"/>
+    <text x="912" y="194" text-anchor="middle" font-size="9.5" fill="#9a6700">MEDIO e ALTO</text>
+    <rect x="36" y="203" width="928" height="26" rx="6" fill="#f6f8fa" opacity="0.6"/>
+    <text x="52" y="222" fill="#1f2328">4   Ponto de costura</text>
+    <text x="470" y="222" font-size="10" fill="#59636e">onde intervir sem alterar o comportamento em volta</text>
+    <rect x="860" y="210" width="104" height="17" rx="4" fill="#9a6700" opacity="0.15"/>
+    <text x="912" y="222" text-anchor="middle" font-size="9.5" fill="#9a6700">MEDIO e ALTO</text>
+    <text x="52" y="250" fill="#1f2328">5   Orcamento de mudanca</text>
+    <text x="470" y="250" font-size="10" fill="#59636e">teto de arquivos e linhas por task</text>
+    <rect x="860" y="238" width="104" height="17" rx="4" fill="#1a7f37" opacity="0.15"/>
+    <text x="912" y="250" text-anchor="middle" font-size="9.5" fill="#1a7f37">sempre</text>
+    <rect x="36" y="259" width="928" height="26" rx="6" fill="#f6f8fa" opacity="0.6"/>
+    <text x="52" y="278" fill="#1f2328">6   Proibicao de colateral</text>
+    <text x="470" y="278" font-size="10" fill="#59636e">nada de brinde no diff; o que incomoda vira DIVIDA.md</text>
+    <rect x="860" y="266" width="104" height="17" rx="4" fill="#1a7f37" opacity="0.15"/>
+    <text x="912" y="278" text-anchor="middle" font-size="9.5" fill="#1a7f37">sempre</text>
+    <text x="52" y="306" fill="#1f2328">7   Plano de reversao</text>
+    <text x="470" y="306" font-size="10" fill="#59636e">cobre o que o versionador nao desfaz</text>
+    <rect x="860" y="294" width="104" height="17" rx="4" fill="#9a6700" opacity="0.15"/>
+    <text x="912" y="306" text-anchor="middle" font-size="9.5" fill="#9a6700">MEDIO e ALTO</text>
+    <rect x="36" y="315" width="928" height="26" rx="6" fill="#f6f8fa" opacity="0.6"/>
+    <text x="52" y="334" fill="#1f2328">8   Roteiro de teste manual</text>
+    <text x="470" y="334" font-size="10" fill="#59636e">para uma pessoa validar na tela, com o colateral</text>
+    <rect x="860" y="322" width="104" height="17" rx="4" fill="#9a6700" opacity="0.15"/>
+    <text x="912" y="334" text-anchor="middle" font-size="9.5" fill="#9a6700">MEDIO e ALTO</text>
+    <text x="52" y="362" fill="#1f2328">9   Comparacao com dado real</text>
+    <text x="470" y="362" font-size="10" fill="#59636e">antes e depois sobre amostra anonimizada</text>
+    <rect x="860" y="350" width="104" height="17" rx="4" fill="#cf222e" opacity="0.15"/>
+    <text x="912" y="362" text-anchor="middle" font-size="9.5" fill="#cf222e">ALTO</text>
+    <rect x="36" y="371" width="928" height="26" rx="6" fill="#f6f8fa" opacity="0.6"/>
+    <text x="52" y="390" fill="#1f2328">10  Prova de codigo vivo</text>
+    <text x="470" y="390" font-size="10" fill="#59636e">confirma que o arquivo e realmente chamado</text>
+    <rect x="860" y="378" width="104" height="17" rx="4" fill="#1a7f37" opacity="0.15"/>
+    <text x="912" y="390" text-anchor="middle" font-size="9.5" fill="#1a7f37">sempre</text>
+    <text x="52" y="418" fill="#1f2328">11  Perguntas por zona</text>
+    <text x="470" y="418" font-size="10" fill="#59636e">disparadas por regra quando o trabalho toca area sensivel</text>
+    <rect x="860" y="406" width="104" height="17" rx="4" fill="#cf222e" opacity="0.15"/>
+    <text x="912" y="418" text-anchor="middle" font-size="9.5" fill="#cf222e">ALTO</text>
+  </g>
+</svg>
