@@ -51,6 +51,7 @@ O método Expx é um conjunto de skills que se compõem, instaladas e mantidas p
 | **[mergex](https://github.com/bittencourtthulio/mergex)** | entrega: branch, commit por task, PR e pacote de QA | raio, caracterização, reversão e dívida alimentam o portão, a classificação de atenção e o PR |
 | **[memox](https://github.com/bittencourtthulio/MemoX)** | **camada** de memória do projeto | regressão e reprovação em QA que ele indexa entram no cálculo de raio |
 | **[prodx](https://github.com/bittencourtthulio/prodx)** | **camada** de produto: decide **se** há trabalho | as zonas de risco do `PERFIL.md` viram gatilho de avaliação completa na triagem dele |
+| **[buildx](https://github.com/bittencourtthulio/buildx)** | orquestra um projeto inteiro, da descrição ao sistema pronto | o legadox não participa dela: projeto novo não tem legado a preservar |
 
 **Camadas** (`legadox`, `stackx`, `memox`, `prodx`) sozinhas não fazem nada — elas modificam o comportamento da `sprintx` e da `runx`. Sem `docs/legado/PERFIL.md`, nada muda: as irmãs se comportam como se comportariam sem esta skill.
 
@@ -443,6 +444,7 @@ Abra uma issue descrevendo o caso concreto antes de mandar um PR grande. Mudanç
 <div align="center">
 <sub>Parte do método <strong>Expx</strong> ·
 <a href="https://github.com/bittencourtthulio/expxdev">expxdev</a> ·
+<a href="https://github.com/bittencourtthulio/buildx">buildx</a> ·
 <a href="https://github.com/bittencourtthulio/sprintx">sprintx</a> ·
 <a href="https://github.com/bittencourtthulio/runx">runx</a> ·
 legadox ·
