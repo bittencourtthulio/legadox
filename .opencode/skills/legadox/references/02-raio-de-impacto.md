@@ -195,6 +195,28 @@ Se o alvo estiver morto **e** o trabalho pedido for justamente alterá-lo, diga 
 
 ---
 
+## Passo 6 — Gravar a faixa na barra de status
+
+Fechado o raio, registre a faixa no `.expx/estado.json`, que é o arquivo que a barra de status do terminal lê. O procedimento completo está em `references/12-estado.md`; o resumo do que gravar aqui é:
+
+| Faixa | `raio` | `orcamento_arquivos` | `orcamento_linhas` |
+|---|---|---|---|
+| BAIXO | `"baixo"` | `null` | `null` |
+| MEDIO | `"medio"` | `"0/3"` | `"0/80"` |
+| ALTO | `"alto"` | `"0/2"` | `"0/40"` |
+
+Os usados nascem em zero e o teto é o da faixa — ou o do `PERFIL.md`, quando ele declarar tetos próprios. Em **BAIXO os dois campos de orçamento vão `null`**: em raio baixo o legadox sai do caminho, inclusive visualmente, e contador de teto que ninguém vai encostar é ruído na tela.
+
+Três coisas que esta gravação **não** é:
+
+- Não é decisão. O arquivo é derivado e somente exibição; nenhuma camada o lê para decidir nada. A faixa que vale continua sendo a de `docs/legado/raio/<trabalho_id>.md`.
+- Não é obrigatória. Se `.expx/` não existir, não crie: siga sem gravar, sem erro e sem aviso. Se a gravação falhar, registre no rastro e siga. A barra nunca interrompe trabalho.
+- Não é sua sozinha. O `estado.json` é compartilhado; escreva **apenas** os seus três campos, preservando os das outras skills.
+
+Fora do modo legado — sem `docs/legado/PERFIL.md` — nada disso acontece, porque nem raio há.
+
+---
+
 ## Formato exato da saída
 
 `docs/legado/raio/<trabalho_id>.md`, preenchido de `assets/TEMPLATE-raio.md`, contendo:
@@ -217,6 +239,7 @@ Se o alvo estiver morto **e** o trabalho pedido for justamente alterá-lo, diga 
 - [ ] A prova de código vivo está registrada.
 - [ ] Em ALTO: o campo de aprovação humana existe, mesmo que ainda pendente.
 - [ ] Nenhum caminho absoluto no arquivo.
+- [ ] A faixa foi gravada em `.expx/estado.json`, ou a gravação foi dispensada porque `.expx/` não existe.
 
 ## Quando o critério não é atendido
 

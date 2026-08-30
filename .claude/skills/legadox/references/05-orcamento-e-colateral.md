@@ -42,6 +42,31 @@ git diff --stat -- <arquivos de producao>
 git diff --numstat | awk '{a+=$1; r+=$2} END {print a+r" linhas, "NR" arquivos"}'
 ```
 
+## O orçamento na barra de status
+
+A mesma contagem que você acabou de fazer alimenta o `.expx/estado.json`, que a barra de status do terminal lê. É o que faz o `2/3 arq · 31/40 ln` subir na tela enquanto se trabalha, em vez de o estouro aparecer só depois de escrito.
+
+**Regravar a cada arquivo alterado dentro da task.** É essa cadência que dá o efeito ao vivo, e é o mesmo momento em que o hook `orcamento-de-mudanca` já está contando.
+
+**Reuse a contagem do hook, não faça uma segunda.** Os critérios são os desta seção — só código de produção, sem teste, sem documentação, sem `docs/legado/`. Duas contagens paralelas divergem, e a barra passaria a mentir sobre o mesmo diff que o hook está julgando.
+
+O caminho é de mão única, e isso é regra: a contagem do diff real alimenta o `estado.json`; **o hook nunca lê o `estado.json` como fonte.** Ele continua contando a partir do `git diff HEAD --numstat`, como sempre fez. Um hook que lesse o arquivo que ele mesmo alimenta ficaria cego para tudo que acontecesse fora da skill.
+
+O que vai em cada campo:
+
+| Momento | `orcamento_arquivos` | `orcamento_linhas` |
+|---|---|---|
+| Raio calculado, task não iniciada | `"0/3"` | `"0/80"` |
+| Durante a task | `"2/3"` | `"31/40"` |
+| Troca de task | volta a `"0/3"` | volta a `"0/80"` |
+| Trabalho concluído | `null` | `null` |
+
+Usados voltam a zero na troca de task; o teto permanece, porque é da faixa e a faixa é do trabalho.
+
+**Em raio BAIXO os dois campos ficam `null`** e o orçamento não aparece na barra. É a mesma proporcionalidade que já governa a camada: nenhum hook de método roda em BAIXO, e correção de rótulo não pode ter contador de orçamento piscando na tela.
+
+Isto é gravação derivada e somente exibição: nenhuma decisão desta camada lê aquele arquivo, apagá-lo não quebra nada, e se `.expx/` não existir você segue sem gravar, sem erro e sem aviso. O procedimento completo — escrita atômica e preservação dos campos das outras skills — está em `references/12-estado.md`.
+
 ## O orçamento é declarado, não descoberto
 
 Cada task do plano declara seu orçamento **antes** da execução, no bloco da task:
@@ -149,6 +174,7 @@ Se a resposta a qualquer uma delas for desconfortável, o diff está errado, nã
 - [ ] Nenhuma alteração colateral no diff.
 - [ ] Todo achado colateral percebido está em `DIVIDA.md`.
 - [ ] `DIVIDA.md` só cresceu; nenhuma linha foi reescrita ou removida.
+- [ ] O orçamento consumido foi regravado em `.expx/estado.json` a cada arquivo alterado, com a mesma contagem do hook — ou a gravação foi dispensada porque `.expx/` não existe ou a faixa é BAIXO.
 
 ## Quando o critério não é atendido
 

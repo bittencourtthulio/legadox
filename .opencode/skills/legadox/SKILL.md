@@ -185,5 +185,6 @@ Regra transversal: use sempre caminhos relativos; nunca escreva caminho absoluto
 | 11 Zonas e perguntas | `references/09-zonas-e-perguntas.md` | — |
 | Integração com a sprintx | `references/10-integracao-sprintx.md` | — |
 | Integração com a runx | `references/11-integracao-runx.md` | — |
+| Estado da barra de status | `references/12-estado.md` | — |
 
 Os caminhos acima são relativos à raiz desta skill. O detalhe operacional de cada camada mora exclusivamente no reference correspondente; leia-o apenas quando a camada for acionada pela faixa do raio.
