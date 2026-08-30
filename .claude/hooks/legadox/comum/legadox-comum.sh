@@ -228,8 +228,8 @@ legadox_rastro() {
         --arg fx "$faixa" --arg tk "$task" --argjson arqs "$lista" \
         '{ts:$ts, expx_eventos:1, trabalho_id:$id, ferramenta:"legadox", origem:"hook",
           evento:$ev, fase:null, task:(if $tk=="" then null else $tk end), agente:"principal",
-          hook:$hk, faixa:(if $fx=="null" then null else $fx end),
-          resultado:$res, detalhe:$det, arquivos:$arqs}' >>"$arq" 2>/dev/null || true
+          resultado:$res, detalhe:$det, arquivos:$arqs,
+          hook:$hk, faixa:(if $fx=="null" then null else $fx end)}' >>"$arq" 2>/dev/null || true
     fi
   } 2>/dev/null || true
   return 0
