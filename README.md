@@ -39,8 +39,10 @@ O método Expx é um conjunto de skills que se compõem, instaladas e mantidas p
 | **legadox** *(este repositório)* | **camada** de segurança para código legado | — |
 | **[stackx](https://github.com/bittencourtthulio/stackx)** | **camada** de convenções do repositório | o cartucho de migração dele alimenta o cálculo de raio; em área legada, quem manda é o `PERFIL.md` |
 | **[mergex](https://github.com/bittencourtthulio/mergex)** | entrega: branch, commit por task, PR e pacote de QA | raio, caracterização, reversão e dívida alimentam o portão, a classificação de atenção e o PR |
+| **[memox](https://github.com/bittencourtthulio/MemoX)** | **camada** de memória do projeto | regressão e reprovação em QA que ele indexa entram no cálculo de raio |
+| **[prodx](https://github.com/bittencourtthulio/prodx)** | **camada** de produto: decide **se** há trabalho | as zonas de risco do `PERFIL.md` viram gatilho de avaliação completa na triagem dele |
 
-**Camadas** (`legadox`, `stackx`) sozinhas não fazem nada — elas modificam o comportamento da `sprintx` e da `runx`. Sem `docs/legado/PERFIL.md`, nada muda: as irmãs se comportam como se comportariam sem esta skill.
+**Camadas** (`legadox`, `stackx`, `memox`, `prodx`) sozinhas não fazem nada — elas modificam o comportamento da `sprintx` e da `runx`. Sem `docs/legado/PERFIL.md`, nada muda: as irmãs se comportam como se comportariam sem esta skill.
 
 Detalhes do ecossistema inteiro no [README do expxdev](https://github.com/bittencourtthulio/expxdev).
 
